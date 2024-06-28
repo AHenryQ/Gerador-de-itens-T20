@@ -77,7 +77,7 @@ let other=""
 if(arma.Other!=undefined||arma.Other!=null){
     other=`, outros: ${arma.Other}`
 }
-res.innerHTML =`${arma.nome}, dano: ${arma.vroll}d${arma.troll}, crítico: ${arma.xCrit}/${arma.rCrit}, tipo:${arma.tipoDano}, alcance:${arma.alcance} mods:${mod}`+other
+//res.innerHTML =`${arma.nome}, dano: ${arma.vroll}d${arma.troll}, crítico: ${arma.xCrit}/${arma.rCrit}, tipo:${arma.tipoDano}, alcance:${arma.alcance} mods:${mod}`+other
 disArma.innerHTML=String(arma.nome)
 disDano.innerHTML=String(`${arma.vroll}d${arma.troll}`)
 disCrit.innerHTML=String(`${arma.xCrit}/${arma.rCrit}`)
