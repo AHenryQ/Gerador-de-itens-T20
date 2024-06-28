@@ -26,7 +26,7 @@ section{
 
 }
 #section1{
-    width: 33%;
+    width: 35%;
     margin-left: 8%;
     margin-bottom: 15px;
     float: left;
@@ -34,12 +34,11 @@ section{
 
 }
 #section2{
-    width: 33%;
-    margin-right: 8%;
+    width: 35%;
+    margin-left: 8%;
     margin-bottom: 15px;
-    float: right;
+    float: left;
     padding: 10px;
-
 }
 footer{
     position: absolute;
