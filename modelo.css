@@ -1,0 +1,64 @@
+body{
+    background: rgb(209, 50, 53);
+    font: normal 15pt Arial;
+    background-image: url(forjaV1.png);
+    background-size: 100%;
+    width: auto;
+    height: auto;
+}
+  
+header{
+    color: white;
+    text-align: center;
+    font-family: 'Tormenta20x';
+
+}
+h1{
+    text-shadow: 1px 3px 5px rgb(131, 2, 2),-1px -3px 5px rgb(131, 2, 2);
+}
+section{
+    background: rgb(243, 242, 241);
+    border-radius: 15px;
+    padding: 15px;
+    width: 750px;
+    margin: auto;
+    font: normal 12pt Arial;
+
+}
+#section1{
+    width: 35%;
+    margin-left: 10%;
+    margin-bottom: 15px;
+    float: left;
+    padding: 10px;
+
+}
+#section2{
+    width: 35%;
+    margin-right: 10%;
+    margin-bottom: 15px;
+    float: right;
+    padding: 10px;
+
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    height: 50px;
+    color: white;
+    text-align: center;
+    font-style: italic;
+}
+#disArma2{
+    color: rgb(209, 50, 53);
+    font-size: 17pt;
+    font-family: 'Tormenta20x';
+}
+@font-face {
+    font-family: 'Tormenta20x';
+    src: url(Tormenta20x.ttf) format('truetype');
+  }
+.display{
+ float: initial;   
+}

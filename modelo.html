@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo</title>
+    <link rel="stylesheet" href="modelo.css">
+    <link rel="shortcut icon" href="tormentaIcon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <h1> Gerador de itens</h1>
+    </header>
+<section id="section1">
+    <div id="stDesc">Descrição
+        <p class="display1" id="disArma">Arma: <p id="disArma2"></p></p>
+        <p class="display1" id="disDano">Dano:<p id="disDano2"></p></p>
+        <p class="display1" id="disCrit">Crítico:<p id="disCrit2"></p></p>
+        <p class="display1" id="disTipo">Tipo:<p id="disTipo2"></p></p>
+        <p class="display1" id="disAlc">Alcance:<p id="disAlc2"></p></p>
+        <p class="display1" id="disOutro">Outro:<p id="disOutro2"></p></p>
+        
+
+    </div>
+    <div id="res"></div>
+
+</section>
+    <section id="section2">
+        <div id="stArms">
+            Armas<br>
+            <select id="options" size="10" onclick="checar()">
+                
+            </select>
+            <input type="radio" id="0mod"value="0" name="mod" class="mod">0 mod</input>
+            <input type="radio" id="1mod"value="1" name="mod" class="mod">1 mod</input>
+            <input type="radio" id="2mod"value="2" name="mod" class="mod">2 mod</input>
+            <input type="radio" id="3mod"value="3" name="mod" class="mod">3 mod</input>
+            <input type="radio" id="4mod"value="4" name="mod" class="mod">4 mod</input>
+            <input type="submit" id="botao" value="Gerar" onclick="checar()"></input>
+        </div>
+        <div id="res"></div>
+    </section>
+    <footer>
+        <p>&copy; Allan Sites</p>
+    </footer>
+    <script src="modelo2.js">
+    </script>
+</body>
+</html>
+
+
