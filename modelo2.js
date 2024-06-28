@@ -38,7 +38,6 @@ presaSerpente=["Presa da Serpente",1,8,2,17,2,0],lancafogoT=["Lança de Fogo",2,
 lancafogoL=["Lança de Fogo",1,10,3,20,1,0],shuriken=["Shuriken",1,4,2,20,1,1],arpao=["Arpão",1,10,3,20,1,1]]
 
 
-//let res= document.getElementById("res")
 let disArma=document.getElementById("disArma2")
 let disDano=document.getElementById("disDano2")
 let disCrit=document.getElementById("disCrit2")
@@ -77,7 +76,6 @@ let other=""
 if(arma.Other!=undefined||arma.Other!=null){
     other=`, outros: ${arma.Other}`
 }
-//res.innerHTML =`${arma.nome}, dano: ${arma.vroll}d${arma.troll}, crítico: ${arma.xCrit}/${arma.rCrit}, tipo:${arma.tipoDano}, alcance:${arma.alcance} mods:${mod}`+other
 disArma.innerHTML=String(arma.nome)
 disDano.innerHTML=String(`${arma.vroll}d${arma.troll}`)
 disCrit.innerHTML=String(`${arma.xCrit}/${arma.rCrit}`)
