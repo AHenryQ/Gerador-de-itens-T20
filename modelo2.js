@@ -81,7 +81,7 @@ disDano.innerHTML=String(`${arma.vroll}d${arma.troll}`)
 disCrit.innerHTML=String(`${arma.xCrit}/${arma.rCrit}`)
 disAlc.innerHTML=String(arma.alcance)
 disAlc.innerHTML=String(arma.tipoDano)
-disOutro.innerHTML=if(arma.Other!=undefined){String(arma.Other)}
+disOutro.innerHTML=String(arma.Other)
 }
 
 function modificadores(arma,num=Number(rand([1,16]))){
