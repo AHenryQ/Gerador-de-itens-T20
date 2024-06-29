@@ -37,8 +37,10 @@ pistolaPunhalL=["Pistola-Punhal",1,6,2,18,1,0],mordidaDiabo=["Mordida do Diabo",
 presaSerpente=["Presa da Serpente",1,8,2,17,2,0],lancafogoT=["Lança de Fogo",2,8,3,19,1,2],
 lancafogoL=["Lança de Fogo",1,10,3,20,1,0],shuriken=["Shuriken",1,4,2,20,1,1],arpao=["Arpão",1,10,3,20,1,1]]
 
+let titulosMaterias=['','de Aço-Rubi','de Adamante', 'de Gelo Eterno','de Madeira Tollon','de Matéria Vermelha','de Mitral','de Casco de Monstro','de Cristal de Sol','de Lanajuste','de Prata','de Couraça de Kaiju','de Pena de Kraken','de Quitina-Razza']
 
 let disArma=document.getElementById("disArma2")
+let disArma3=document.getElementById("disArma3")
 let disDano=document.getElementById("disDano2")
 let disCrit=document.getElementById("disCrit2")
 let disTipo=document.getElementById("disTipo2")
@@ -69,6 +71,8 @@ altArm(fabArms(...armas[Number(options.value)]),Number(check))
 }
 
 function altArm(arma,mod){
+    arma.nomeMod=[]
+    arma.nomeMaterial=0
     for(let i=0;i<mod;i++){
         modificadores(arma)
 }console.log(arma)
@@ -78,20 +82,22 @@ if(arma.Other!=undefined||arma.Other!=null){
 }
 disArma.innerHTML=String(arma.nome)
 disDano.innerHTML=String(`${arma.vroll}d${arma.troll}`)
-disCrit.innerHTML=String(`${arma.xCrit}/${arma.rCrit}`)
+disCrit.innerHTML=String(`x${arma.xCrit}/${arma.rCrit}`)
 disAlc.innerHTML=String(arma.alcance)
-disAlc.innerHTML=String(arma.tipoDano)
+disTipo.innerHTML=String(arma.tipoDano)
 disOutro.innerHTML=arma.Other!=undefined?String(arma.Other):""
+disArma3.innerHTML=String(titulosMaterias[Number(arma.nomeMaterial)])
 }
 
-function modificadores(arma,num=Number(rand([1,16]))){
+function modificadores(arma,num=Number(rand([1,20]))){
     switch(num){
     case 1://certeira
     if(!!arma.certeira==true){
         modificadores(arma)
     }else{
         arma.certeira=true
-        arma.BonTest=1}
+        arma.BonTest=1
+        arma.nomeMod.push(1)}
         break
     case 2://pungente
         if(!!arma.certeira==false||!!arma.pungente==true){
@@ -99,19 +105,22 @@ function modificadores(arma,num=Number(rand([1,16]))){
         }else{
             arma.BonTest+=1
             arma.pungente=true
+            arma.nomeMod.push(2)
         }
         break
     case 3://cruel
     if(!!arma.cruel==true){
         modificadores(arma)
     } else{arma.cruel=true
-        arma.BonAtk=1}
+        arma.BonAtk=1
+        arma.nomeMod.push(3)}
         break
     case 4:// atroz
         if(!!arma.cruel==true||!!arma.atroz==false){
             modificadores(arma)
         }else{arma.BonAtk+=1
             arma.atroz=true
+            arma.nomeMod.push(4)
         }
         break
     case 5://equilibrada
@@ -120,8 +129,10 @@ function modificadores(arma,num=Number(rand([1,16]))){
         }else if(!!arma.Other==false){
             arma.Other="+2 em testes de manobras"
             arma.equilibrada=true
+            arma.nomeMod.push(5)
         }else{arma.Other+=", +2 em testes de manobras"
-            arma.equilibrada=true}
+            arma.equilibrada=true
+            arma.nomeMod.push(5)}
         break
     case 6://harmonizada         arma.Other="Custo de habilidades de ataque -1pm"
         if(!!arma.harmonizada==true){
@@ -132,6 +143,7 @@ function modificadores(arma,num=Number(rand([1,16]))){
         }else{arma.Other+=", custo de habilidades de ataque -1pm"
             arma.harmonizada=true
             }
+            arma.nomeMod.push(6)
         break
     case 7://injeção alquimica
         if(!!arma.alquimica==true){
@@ -141,13 +153,15 @@ function modificadores(arma,num=Number(rand([1,16]))){
             arma.alquimica=true
         }else{arma.Other+=", gera efeito preparado(2 cargas)"
             arma.alquimica=true}
+            arma.nomeMod.push(7)
         break
     case 8://maciça
         if(!!arma.melCrit==true){
         modificadores(arma)
         }else{
         arma.xCrit+=1
-        arma.melCrit=true}
+        arma.melCrit=true
+        arma.nomeMod.push(8)}
         break
     case 9://mira telescópica
     if(arma.alcance=="-"||!!arma.melAlc==true){
@@ -159,6 +173,7 @@ function modificadores(arma,num=Number(rand([1,16]))){
         arma.alcance=90
         arma.melAlc=true
     }
+    arma.nomeMod.push(9)
         break
     case 10://precisa
         if(!!arma.melCrit==true){
@@ -167,6 +182,7 @@ function modificadores(arma,num=Number(rand([1,16]))){
             arma.rCrit-=1
             arma.melCrit=true
         }
+        arma.nomeMod.push(10)
         break
     case 11://banhado a ouro
         if(!!arma.banhado==true){
@@ -176,6 +192,7 @@ function modificadores(arma,num=Number(rand([1,16]))){
         arma.banhado=true
         }else{arma.Other+=", +2 em em testes de diplomacia"
         arma.banhado=true}
+        arma.nomeMod.push(11)
         break
     case 12://cravejado de gemas
         if(!!arma.cravejado==true){
@@ -185,7 +202,8 @@ function modificadores(arma,num=Number(rand([1,16]))){
             arma.cravejado=true
         }else{arma.Other+=", +2 em testes de enganação"
             arma.cravejado=true}
-        break
+            arma.nomeMod.push(12)
+            break
     case 13://discreto
         if(!!arma.discreto==true){
             modificadores(arma)
@@ -195,7 +213,8 @@ function modificadores(arma,num=Number(rand([1,16]))){
         }else{arma.Other+=", ocupa -1 espaço e +5 para ocultar arma"
             arma.discreto=true
     }
-        break
+        arma.nomeMod.push(13)
+            break
     case 14://macabro
         if(!!arma.macabro==true){
             modificadores(arma)
@@ -205,20 +224,29 @@ function modificadores(arma,num=Number(rand([1,16]))){
         }else{arma.Other="+2 em intimidação e -2 em diplomacia"
             arma.macabro=true
     }
-        break
+            arma.nomeMod.push(14)
+            break
     case 15://penetrante
     if(!!arma.cruel==false||!!arma.penetrante==true){
         modificadores(arma)
     }
-    if(!!arma.rd==true){arma.rd+=5}else{arma.rd=5}
+    if(!!arma.rd==true){
+        arma.rd+=5
+    }else{arma.rd=5
+    }
     if(!!arma.Other==false){
         arma.Other=`Ignora 5 ponto de RD`
     }
     else{arma.Other+=`, ignora 5 ponto de RD`}
     arma.penetrante=true
+    arma.nomeMod.push(15)
 
         break
     case 16://material
+    case 17://material
+    case 18://material
+    case 19://material
+    case 20://material
     materiais(arma)
         break
     default:
@@ -234,14 +262,18 @@ function materiais(arma,num=Number(rand([1,10]))){
         if(!!arma.rd==true){arma.rd+=10}else{arma.rd=10}
         if(!!arma.Other==false){
                 arma.Other=`Ignora 10 ponto de RD`
-        }else {arma.Other+=`, ignora 10 ponto de RD`}
+                arma.nomeMaterial=1
+        }else {arma.Other+=`, ignora 10 ponto de RD`
+            arma.nomeMaterial=1
+        }
         arma.material=true}
         break
         case 2://adamante
         if(!!arma.material==true){
             modificadores(arma)}else{
             passoUp(arma)
-            arma.material=true}
+            arma.material=true
+            arma.nomeMaterial=2}
         break
         case 3://gelo eterno
         if(!!arma.material==true){
@@ -249,7 +281,10 @@ function materiais(arma,num=Number(rand([1,10]))){
             if(!!arma.BonAtk==true){arma.BonAtk+=2}else{arma.BonAtk=2}
             if(!!arma.Other==false){
                 arma.Other="Causa 2 pontos de dano por frio"
-            }else{arma.Other+=", causa 2 pontos de dano por frio"}
+                arma.nomeMaterial=3
+            }else{arma.Other+=", causa 2 pontos de dano por frio"
+                arma.nomeMaterial=3
+            }
         arma.material=true}
         break
         case 4://madeira tollon
@@ -257,7 +292,10 @@ function materiais(arma,num=Number(rand([1,10]))){
             modificadores(arma)}else{
                 if(!!arma.Other==false){
                 arma.Other="Conta como arma magica, habilidades ativadas ao atacar tem custo -1pm"
-            }else{arma.Other+=", conta como arma magica, habilidades ativadas ao atacar tem custo -1pm"}
+                arma.nomeMaterial=4
+            }else{arma.Other+=", conta como arma magica, habilidades ativadas ao atacar tem custo -1pm"
+                arma.nomeMaterial=4
+            }
         arma.material=true}
         break
         case 5://matéria vermelha
@@ -266,14 +304,18 @@ function materiais(arma,num=Number(rand([1,10]))){
                 arma.danomaterial="1d6"
                 if (!!arma.Other==false){
                     arma.Other="Causa +1d6 extra, mas causa 1 ponto de dano ao usar"
-                }else{arma.Other+=", causa +1d6 extra, mas causa 1 ponto de dano ao usar"}
+                    arma.nomeMaterial=5
+                }else{arma.Other+=", causa +1d6 extra, mas causa 1 ponto de dano ao usar"
+                    arma.nomeMaterial=5
+                }
                 arma.material=true}
         break
         case 6://mitral
         if(!!arma.material==true){
             modificadores(arma)}else{
-                arma.material=true    
-            arma.rCrit--
+                arma.material=true
+                arma.nomeMaterial=6    
+                arma.rCrit--
             }
             break
         case 7://casco de monstro
@@ -282,14 +324,17 @@ function materiais(arma,num=Number(rand([1,10]))){
                 arma.material=true
                 if(!!arma.Other==false){
                     arma.Other="Conta como arma primitiva"                    
+                    arma.nomeMaterial=7
                 }else{
                     arma.Other+=", conta como arma primitiva"
+                    arma.nomeMaterial=7
                 }
             }
             break
         case 8://cristal de sol
         if(!!arma.material==true){
             modificadores(arma)}else{
+                arma.nomeMaterial=8
                 if(arma.tipoDano!="corte"||arma.tipoDano!="perfuração"){
                     modificadores(arma)}else{
                         if(!!arma.BonAtk==true){arma.BonAtk+=2}else{arma.BonAtk=2}
@@ -302,6 +347,7 @@ function materiais(arma,num=Number(rand([1,10]))){
         case 9://lanajuste
         if(!!arma.material==true){
             modificadores(arma)}else{
+                arma.nomeMaterial=9
                 arma.material=true
                 if(!!arma.Other==false){
                     arma.Other="Ignora penalidade por combate submerso"                    
@@ -313,6 +359,7 @@ function materiais(arma,num=Number(rand([1,10]))){
         case 10://prata
         if(!!arma.material==true){
             modificadores(arma)}else{
+                arma.nomeMaterial=10
                 if(!!arma.Other==false){
                     arma.Other="+2 de dano e conta como arma magica em espíritos e mortos vivos"                    
                 }else{
@@ -323,7 +370,8 @@ function materiais(arma,num=Number(rand([1,10]))){
         case 11://couraça de kaiju-
         if(!!arma.material==true){
             modificadores(arma)}else{
-            arma.material=true
+                arma.nomeMaterial=11
+                arma.material=true
                 passoUp(arma)
                 if(!!arma.Other==false){
                     arma.Other="Pode gastar 2pm para ignorar redução de dano"                    
@@ -335,6 +383,7 @@ function materiais(arma,num=Number(rand([1,10]))){
         case 12://pena de kraken-
         if(!!arma.material==true){
             modificadores(arma)}else{
+                arma.nomeMaterial=12
                 arma.material=true
                 if(!!arma.Other==false){
                     arma.Other="Aumenta o dano em 2 passos no dano (antes de multiplicar)"                    
@@ -346,6 +395,7 @@ function materiais(arma,num=Number(rand([1,10]))){
         case 13://quitina razza-
         if(!!arma.material==true){
             modificadores(arma)}else{
+                arma.nomeMaterial=13
                 arma.material=true
                 if(!!arma.Other==false){
                     arma.Other="Quando rolar o máximo no dado de dano, role outro dado extra, repetindo se necessário."
