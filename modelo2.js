@@ -39,6 +39,16 @@ lancafogoL=["Lança de Fogo",1,10,3,20,1,0],shuriken=["Shuriken",1,4,2,20,1,1],a
 
 let titulosMaterias=['','de Aço-Rubi','de Adamante', 'de Gelo Eterno','de Madeira Tollon','de Matéria Vermelha','de Mitral','de Casco de Monstro','de Cristal de Sol','de Lanajuste','de Prata','de Couraça de Kaiju','de Pena de Kraken','de Quitina-Razza']
 
+let arrTituloModsA=['Certeira','Pungente','Cruel','Atroz','Equilibrada','Harmonizada','com Injeção Alquímica','Maciça','com Mira telescópica','Precisa', 'Banhada a Ouro','Cravejada de Gemas','Discreta','Macabra','Penetrante']
+let arrTituloModsO=['Certeiro','Pungente','Cruel','Atroz','Equilibrado','Harmonizado','com Injeção Alquímica','Maciço','com Mira telescópica','Preciso', 'Banhado a Ouro','Cravejado de Gemas','Discreto','Macabro','Penetrante']
+
+let titulos=""
+function titulosMods(...indexTitu){
+    indexTitu.forEach(n=>titulos+=arrTituloMods[n])
+    return titulos
+}
+console.log(titulosMods(...arr))
+
 let disArma=document.getElementById("disArma2")
 let disArma3=document.getElementById("disArma3")
 let disDano=document.getElementById("disDano2")
@@ -71,6 +81,7 @@ altArm(fabArms(...armas[Number(options.value)]),Number(check))
 }
 
 function altArm(arma,mod){
+    if(mod>4){mod=4};   
     arma.nomeMod=[]
     arma.nomeMaterial=0
     for(let i=0;i<mod;i++){
@@ -140,10 +151,12 @@ function modificadores(arma,num=Number(rand([1,20]))){
         }else if(!!arma.Other==false){
             arma.Other="Custo de habilidades de ataque -1pm"
             arma.harmonizada=true
+            arma.nomeMod.push(6)
         }else{arma.Other+=", custo de habilidades de ataque -1pm"
             arma.harmonizada=true
-            }
-            arma.nomeMod.push(6)
+            arma.nomeMod.push(6)    
+        }
+            
         break
     case 7://injeção alquimica
         if(!!arma.alquimica==true){
@@ -151,9 +164,10 @@ function modificadores(arma,num=Number(rand([1,20]))){
         }else if(!!arma.Other==false){
             arma.Other="Gera efeito preparado(2 cargas)"
             arma.alquimica=true
-        }else{arma.Other+=", gera efeito preparado(2 cargas)"
-            arma.alquimica=true}
             arma.nomeMod.push(7)
+        }else{arma.Other+=", gera efeito preparado(2 cargas)"
+            arma.nomeMod.push(7)
+            arma.alquimica=true}
         break
     case 8://maciça
         if(!!arma.melCrit==true){
@@ -169,11 +183,12 @@ function modificadores(arma,num=Number(rand([1,20]))){
     }else if(arma.alcance==9){
         arma.alcance=30
         arma.melAlc=true
+        arma.nomeMod.push(9)
     }else if(arma.alcance==30){
         arma.alcance=90
         arma.melAlc=true
+        arma.nomeMod.push(9)
     }
-    arma.nomeMod.push(9)
         break
     case 10://precisa
         if(!!arma.melCrit==true){
@@ -181,8 +196,8 @@ function modificadores(arma,num=Number(rand([1,20]))){
         } else{
             arma.rCrit-=1
             arma.melCrit=true
+            arma.nomeMod.push(10)
         }
-        arma.nomeMod.push(10)
         break
     case 11://banhado a ouro
         if(!!arma.banhado==true){
@@ -190,9 +205,10 @@ function modificadores(arma,num=Number(rand([1,20]))){
         }else if(!!arma.Other==false){
         arma.Other="+2 em em testes de diplomacia"
         arma.banhado=true
-        }else{arma.Other+=", +2 em em testes de diplomacia"
-        arma.banhado=true}
         arma.nomeMod.push(11)
+        }else{arma.Other+=", +2 em em testes de diplomacia"
+        arma.banhado=true
+        arma.nomeMod.push(11)}
         break
     case 12://cravejado de gemas
         if(!!arma.cravejado==true){
@@ -200,9 +216,11 @@ function modificadores(arma,num=Number(rand([1,20]))){
         }else if(!!arma.Other==false){
             arma.Other="+2 em testes de enganação"
             arma.cravejado=true
-        }else{arma.Other+=", +2 em testes de enganação"
-            arma.cravejado=true}
             arma.nomeMod.push(12)
+        }else{arma.Other+=", +2 em testes de enganação"
+            arma.cravejado=true
+            arma.nomeMod.push(12)
+        }
             break
     case 13://discreto
         if(!!arma.discreto==true){
@@ -210,10 +228,11 @@ function modificadores(arma,num=Number(rand([1,20]))){
         }else if(!!arma.Other==false){
             arma.Other="Ocupa -1 espaço e +5 para ocultar arma"
             arma.discreto=true
+            arma.nomeMod.push(13)
         }else{arma.Other+=", ocupa -1 espaço e +5 para ocultar arma"
             arma.discreto=true
-    }
-        arma.nomeMod.push(13)
+            arma.nomeMod.push(13)
+        }
             break
     case 14://macabro
         if(!!arma.macabro==true){
@@ -221,15 +240,16 @@ function modificadores(arma,num=Number(rand([1,20]))){
         }else if(!!arma.Other==false){
             arma.Other="+2 em intimidação e -2 em diplomacia"
             arma.macabro=true
+            arma.nomeMod.push(14)
         }else{arma.Other="+2 em intimidação e -2 em diplomacia"
             arma.macabro=true
-    }
             arma.nomeMod.push(14)
+    }
             break
     case 15://penetrante
     if(!!arma.cruel==false||!!arma.penetrante==true){
         modificadores(arma)
-    }
+    }else{
     if(!!arma.rd==true){
         arma.rd+=5
     }else{arma.rd=5
@@ -241,7 +261,7 @@ function modificadores(arma,num=Number(rand([1,20]))){
     arma.penetrante=true
     arma.nomeMod.push(15)
 
-        break
+     }   break
     case 16://material
     case 17://material
     case 18://material
