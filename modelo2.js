@@ -1,8 +1,9 @@
-function fabArms(nome,vroll,troll,xCrit,rCrit,tipo=0,alc=0,pass=0){
+function fabArms(nome,substantivo,vroll,troll,xCrit,rCrit,tipo=0,alc=0,pass=0){
     alarr=["-",9,30,90];
     tipoArr=["-","Perfuração","Corte","Impacto"]
     return{
     nome,
+    substantivo,
     vroll,
     troll,
     xCrit,
@@ -11,42 +12,38 @@ function fabArms(nome,vroll,troll,xCrit,rCrit,tipo=0,alc=0,pass=0){
     tipoDano:tipoArr[tipo],
     passoup2:!!pass
 }}
-let armas=[adaga=["Adaga",1,4,2,19,1,1],espadaCurta=["Espada Curta",1,6,2,19,1],
-foice=["Foice",1,6,3,20,2],clava=["Clava",1,6,2,20,3,0],lanca=["Lança",1,6,2,20,1,1],
-maca=["Maça",1,8,2,20,3,0],bordao=["Bordão",1,6,2,20,3,0],pique=["Pique",1,8,2,20,1,0],
-tacape=["Tacape",1,10,2,20,3,0],azagaia=["Azagaia",1,6,2,20,1,2],bestaLeve=["Besta Leve",1,8,2,19,1,2],
-funda=["Funda",1,4,2,20,3,2],arcoCurto=["Arco Curto",1,6,3,20,2,2],
-machadinha=["Machadinha",1,6,3,20,2,1],cimitarra=["Cimitarra",1,6,2,18,2,0],
-espadaLonga=["Espada Longa", 1,8,2,19,2,0],florete=["Florete",1,6,2,18,1,0],
-machadoBatalha=["Machado de Batalha",1,8,3,20,2,0],mangual=["Mangual",1,8,2,20,3,0],
-marteloGuerra=["Martelo de Guerra",1,8,3,20,3,0],picareta=["Picareta",1,6,4,20,1,0],
-tridente=["Tridente",1,8,2,20,1,1],alabarda=["Alabarda",1,10,3,20,2,0],
-alfange=["Alfange",2,4,2,18,2,0],gadanho=["Gadanho",2,4,4,20,2,0],
-lancaMontada=["Lança Montada",1,8,3,20,1,0],machadoGuerra=["Machado de Guerra",1,12,3,20,2,0],
-marreta=["Marreta",3,4,2,20,3,0],montante=["Montante",2,6,2,19,2,0],
-arcoLongo=["Arco Longo", 1,8,3,20,1,2],bestaPesada=["Besta Pesada",1,12,2,19,1,2],
-chicote=["Chicote",1,3,2,20,2,0],espadaBastarda=["Espada Bastarda",1,10,2,19,2,0],
-katana=["Katana",1,8,2,19,2,0],machadoAnao=["Machado Anão",1,10,3,20,2,0],
-correnteEspinhos=["Corrente de Espinhos",2,4,2,19,2,0],machadoTaurico=["Machado Táurico", 2,8,3,20,2,0,1]
-,pistola=["Pistola",2,6,3,19,1,1],mosquete=["Mosquete",2,8,3,19,1,2,1],porrete=["Porrete",1,6,2,20,3,0],
-zarabatana=["Zarabatana",1,3,2,20,1,1],nekote=["Neko-te",1,4,2,19,2,0],gladio=["Gládio",1,6,3,19,1,0],
-tetsubo=["Tetsubo",1,10,2,20,3,0],traque=["Traque",2,6,3,19,1,1],arcabuz=["Arcabuz",2,10,3,19,1,2,1],
-bacamarte=["Bacamarte",4,6,3,19,1,0,1],acoitefinn=["Açoite Fintroll",1,8,2,20,2,0],
-espadaVespa=["Espada Vespa",2,4,2,18,1,0],pistolaPunhalT=["Pistola-Punhal",2,6,3,19,1,1],
-pistolaPunhalL=["Pistola-Punhal",1,6,2,18,1,0],mordidaDiabo=["Mordida do Diabo",1,4,2,20,1,0],
-presaSerpente=["Presa da Serpente",1,8,2,17,2,0],lancafogoT=["Lança de Fogo",2,8,3,19,1,2],
-lancafogoL=["Lança de Fogo",1,10,3,20,1,0],shuriken=["Shuriken",1,4,2,20,1,1],arpao=["Arpão",1,10,3,20,1,1]]
+let armas=[adaga=["Adaga",0,1,4,2,19,1,1],espadaCurta=["Espada Curta",0,1,6,2,19,1],foice=["Foice",0,1,6,3,20,2],clava=["Clava",0,1,6,2,20,3,0],lanca=["Lança",0,1,6,2,20,1,1],maca=["Maça",0,1,8,2,20,3,0],bordao=["Bordão",1,1,6,2,20,3,0],pique=["Pique",1,1,8,2,20,1,0],
+tacape=["Tacape",1,1,10,2,20,3,0],azagaia=["Azagaia",0,1,6,2,20,1,2],bestaLeve=["Besta Leve",0,1,8,2,19,1,2],funda=["Funda",0,1,4,2,20,3,2],
+arcoCurto=["Arco Curto",1,1,6,3,20,2,2],machadinha=["Machadinha",0,1,6,3,20,2,1],cimitarra=["Cimitarra",0,1,6,2,18,2,0],espadaLonga=["Espada Longa",0,1,8,2,19,2,0],florete=["Florete",1,1,6,2,18,1,0],machadoBatalha=["Machado de Batalha",1,1,8,3,20,2,0],
+mangual=["Mangual",1,1,8,2,20,3,0],marteloGuerra=["Martelo de Guerra",1,1,8,3,20,3,0],picareta=["Picareta",0,1,6,4,20,1,0],
+tridente=["Tridente",1,1,8,2,20,1,1],alabarda=["Alabarda",0,1,10,3,20,2,0],alfange=["Alfange",0,2,4,2,18,2,0],
+gadanho=["Gadanho",1,2,4,4,20,2,0],lancaMontada=["Lança Montada",0,1,8,3,20,1,0],machadoGuerra=["Machado de Guerra",1,1,12,3,20,2,0],
+marreta=["Marreta",0,3,4,2,20,3,0],montante=["Montante",0,2,6,2,19,2,0],arcoLongo=["Arco Longo",1,1,8,3,20,1,2],
+bestaPesada=["Besta Pesada",0,1,12,2,19,1,2],chicote=["Chicote",1,1,3,2,20,2,0],espadaBastarda=["Espada Bastarda",0,1,10,2,19,2,0],
+katana=["Katana",0,1,8,2,19,2,0],machadoAnao=["Machado Anão",1,1,10,3,20,2,0],correnteEspinhos=["Corrente de Espinhos",0,2,4,2,19,2,0],machadoTaurico=["Machado Táurico",1,2,8,3,20,2,0,1],pistola=["Pistola",0,2,6,3,19,1,1],mosquete=["Mosquete",1,2,8,3,19,1,2,1],
+porrete=["Porrete",1,1,6,2,20,3,0],zarabatana=["Zarabatana",0,1,3,2,20,1,1],nekote=["Neko-te",1,1,4,2,19,2,0],gladio=["Gládio",1,1,6,3,19,1,0],
+tetsubo=["Tetsubo",1,1,10,2,20,3,0],traque=["Traque",1,2,6,3,19,1,1],arcabuz=["Arcabuz",0,2,10,3,19,1,2,1],
+bacamarte=["Bacamarte",1,4,6,3,19,1,0,1],acoitefinn=["Açoite Fintroll",1,1,8,2,20,2,0],espadaVespa=["Espada Vespa",0,2,4,2,18,1,0],
+pistolaPunhalT=["Pistola-Punhal",0,2,6,3,19,1,1],pistolaPunhalL=["Pistola-Punhal",0,1,6,2,18,1,0],
+mordidaDiabo=["Mordida do Diabo",0,1,4,2,20,1,0],presaSerpente=["Presa da Serpente",0,1,8,2,17,2,0],lancafogoT=["Lança de Fogo",1,2,8,3,19,1,2],
+lancafogoL=["Lança de Fogo",1,1,10,3,20,1,0],shuriken=["Shuriken",0,1,4,2,20,1,1],arpao=["Arpão",1,1,10,3,20,1,1]]
 
 let titulosMateriais=['','de Aço-Rubi','de Adamante', 'de Gelo Eterno','de Madeira Tollon','de Matéria Vermelha','de Mitral','de Casco de Monstro','de Cristal de Sol','de Lanajuste','de Prata','de Couraça de Kaiju','de Pena de Kraken','de Quitina-Razza'];
 
-let arrTituloModsA=['Certeira','Pungente','Cruel','Atroz','Equilibrada','Harmonizada','com Injeção Alquímica','Maciça','com Mira telescópica','Precisa', 'Banhada a Ouro','Cravejada de Gemas','Discreta','Macabra','Penetrante'];
-let arrTituloModsO=['Certeiro','Pungente','Cruel','Atroz','Equilibrado','Harmonizado','com Injeção Alquímica','Maciço','com Mira telescópica','Preciso', 'Banhado a Ouro','Cravejado de Gemas','Discreto','Macabro','Penetrante'];
+let arrTituloModsA=['',' Certeira',' Pungente',' Cruel',' Atroz',' Equilibrada',' Harmonizada',' com Injeção Alquímica',' Maciça',' com Mira telescópica',' Precisa', ' Banhada a Ouro',' Cravejada de Gemas',' Discreta',' Macabra',' Penetrante'];
+let arrTituloModsO=['',' Certeiro',' Pungente',' Cruel',' Atroz',' Equilibrado',' Harmonizado',' com Injeção Alquímica',' Maciço',' com Mira telescópica',' Preciso', ' Banhado a Ouro',' Cravejado de Gemas',' Discreto',' Macabro',' Penetrante'];
 
-let titulos=""
-function titulosMods(...indexTitu){
-    indexTitu.forEach(n=>titulos+=arrTituloMods[n])
-    return titulos
-}
+
+function titulosModsA(...indexTitu){
+    if(indexTitu!=0){
+    indexTitu.forEach(n=>titulos+=arrTituloModsA[n])
+    console.log(indexTitu)}
+    return titulos}
+function titulosModsO(...indexTitu){
+    if(indexTitu!=0){
+    indexTitu.forEach(n=>titulos+=arrTituloModsO[n])
+    console.log(indexTitu)}
+    return titulos}
 
 let disArma=document.getElementById("disArma2")
 let disArma3=document.getElementById("disArma3")
@@ -78,7 +75,7 @@ for(i=0;i<Number(mods.length);i++){
 console.log(mods)
 altArm(fabArms(...armas[Number(options.value)]),Number(check))
 }
-
+let titulos=""
 function altArm(arma,mod){
     if(mod>4){mod=4};   
     arma.nomeMod=[]
@@ -86,9 +83,15 @@ function altArm(arma,mod){
     for(let i=0;i<mod;i++){
         modificadores(arma)
 }console.log(arma)
-let other=""
-if(arma.Other!=undefined||arma.Other!=null){
-    other=`, outros: ${arma.Other}`
+// let other=""
+// if(arma.Other!=undefined||arma.Other!=null){
+//     other=`, outros: ${arma.Other}`
+// }
+if(arma.substantivo==0){
+    titulosModsA(...arma.nomeMod)
+}else{
+    titulosModsO(...arma.nomeMod)
+
 }
 disArma.innerHTML=String(arma.nome)
 disDano.innerHTML=String(`${arma.vroll}d${arma.troll}`)
@@ -96,7 +99,9 @@ disCrit.innerHTML=String(`x${arma.xCrit}/${arma.rCrit}`)
 disAlc.innerHTML=String(arma.alcance)
 disTipo.innerHTML=String(arma.tipoDano)
 disOutro.innerHTML=arma.Other!=undefined?String(arma.Other):""
-disArma3.innerHTML=String(titulosMateriais[Number(arma.nomeMaterial)])
+disArma3.innerHTML=String(titulosMateriais[Number(arma.nomeMaterial)]+titulos)
+console.log(titulos)
+titulos=""
 }
 
 
