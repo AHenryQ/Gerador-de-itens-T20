@@ -95,7 +95,7 @@ if(arma.substantivo==0){
 }
 disArma.innerHTML=String(arma.nome)
 disDano.innerHTML=String(`${arma.vroll}d${arma.troll}`)
-    if(arma.BonAtk==true){disDano.innerHTML=String(` + ${arma.BonAtk}`)}
+    if(arma.BonAtk==true){disDano.innerHTML+=String(` +${arma.BonAtk}`)}
 disCrit.innerHTML=String(`x${arma.xCrit}/${arma.rCrit}`)
 disAlc.innerHTML=String(arma.alcance)
 disTipo.innerHTML=String(arma.tipoDano)
