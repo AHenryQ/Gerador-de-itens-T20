@@ -47,7 +47,6 @@ function titulosMods(...indexTitu){
     indexTitu.forEach(n=>titulos+=arrTituloMods[n])
     return titulos
 }
-console.log(titulosMods(...arr))
 
 let disArma=document.getElementById("disArma2")
 let disArma3=document.getElementById("disArma3")
