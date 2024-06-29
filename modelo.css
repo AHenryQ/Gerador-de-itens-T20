@@ -20,7 +20,7 @@ section{
     background: rgb(243, 242, 241);
     border-radius: 15px;
     padding: 15px;
-    width: 700px;
+    width: 750px;
     margin: auto;
     font: normal 12pt Arial;
 
@@ -39,6 +39,7 @@ section{
     margin-bottom: 15px;
     float: left;
     padding: 10px;
+
 }
 footer{
     position: absolute;
@@ -53,11 +54,13 @@ footer{
     color: rgb(209, 50, 53);
     font-size: 17pt;
     font-family: 'Tormenta20x';
+    white-space: nowrap;   
+
 }
 @font-face {
     font-family: 'Tormenta20x';
     src: url(Tormenta20x.ttf) format('truetype');
   }
 .display{
- float: initial;   
+    white-space: nowrap;   
 }
