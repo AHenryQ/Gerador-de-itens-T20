@@ -37,10 +37,10 @@ pistolaPunhalL=["Pistola-Punhal",1,6,2,18,1,0],mordidaDiabo=["Mordida do Diabo",
 presaSerpente=["Presa da Serpente",1,8,2,17,2,0],lancafogoT=["Lança de Fogo",2,8,3,19,1,2],
 lancafogoL=["Lança de Fogo",1,10,3,20,1,0],shuriken=["Shuriken",1,4,2,20,1,1],arpao=["Arpão",1,10,3,20,1,1]]
 
-let titulosMaterias=['','de Aço-Rubi','de Adamante', 'de Gelo Eterno','de Madeira Tollon','de Matéria Vermelha','de Mitral','de Casco de Monstro','de Cristal de Sol','de Lanajuste','de Prata','de Couraça de Kaiju','de Pena de Kraken','de Quitina-Razza']
+let titulosMateriais=['','de Aço-Rubi','de Adamante', 'de Gelo Eterno','de Madeira Tollon','de Matéria Vermelha','de Mitral','de Casco de Monstro','de Cristal de Sol','de Lanajuste','de Prata','de Couraça de Kaiju','de Pena de Kraken','de Quitina-Razza'];
 
-let arrTituloModsA=['Certeira','Pungente','Cruel','Atroz','Equilibrada','Harmonizada','com Injeção Alquímica','Maciça','com Mira telescópica','Precisa', 'Banhada a Ouro','Cravejada de Gemas','Discreta','Macabra','Penetrante']
-let arrTituloModsO=['Certeiro','Pungente','Cruel','Atroz','Equilibrado','Harmonizado','com Injeção Alquímica','Maciço','com Mira telescópica','Preciso', 'Banhado a Ouro','Cravejado de Gemas','Discreto','Macabro','Penetrante']
+let arrTituloModsA=['Certeira','Pungente','Cruel','Atroz','Equilibrada','Harmonizada','com Injeção Alquímica','Maciça','com Mira telescópica','Precisa', 'Banhada a Ouro','Cravejada de Gemas','Discreta','Macabra','Penetrante'];
+let arrTituloModsO=['Certeiro','Pungente','Cruel','Atroz','Equilibrado','Harmonizado','com Injeção Alquímica','Maciço','com Mira telescópica','Preciso', 'Banhado a Ouro','Cravejado de Gemas','Discreto','Macabro','Penetrante'];
 
 let titulos=""
 function titulosMods(...indexTitu){
@@ -96,8 +96,9 @@ disCrit.innerHTML=String(`x${arma.xCrit}/${arma.rCrit}`)
 disAlc.innerHTML=String(arma.alcance)
 disTipo.innerHTML=String(arma.tipoDano)
 disOutro.innerHTML=arma.Other!=undefined?String(arma.Other):""
-disArma3.innerHTML=String(titulosMaterias[Number(arma.nomeMaterial)])
+disArma3.innerHTML=String(titulosMateriais[Number(arma.nomeMaterial)])
 }
+
 
 function modificadores(arma,num=Number(rand([1,20]))){
     switch(num){
