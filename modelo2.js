@@ -95,6 +95,7 @@ if(arma.substantivo==0){
 }
 disArma.innerHTML=String(arma.nome)
 disDano.innerHTML=String(`${arma.vroll}d${arma.troll}`)
+    if(arma.BonAtk==true){disDano.innerHTML=String(` + ${arma.BonAtk}`)}
 disCrit.innerHTML=String(`x${arma.xCrit}/${arma.rCrit}`)
 disAlc.innerHTML=String(arma.alcance)
 disTipo.innerHTML=String(arma.tipoDano)
@@ -113,6 +114,7 @@ function modificadores(arma,num=Number(rand([1,20]))){
     }else{
         arma.certeira=true
         arma.BonTest=1
+        arma.Other="+1 em testes de ataque"
         arma.nomeMod.push(1)}
         break
     case 2://pungente
@@ -121,6 +123,7 @@ function modificadores(arma,num=Number(rand([1,20]))){
         }else{
             arma.BonTest+=1
             arma.pungente=true
+            arma.Other="+2 em testes de ataque"
             arma.nomeMod.push(2)
         }
         break
