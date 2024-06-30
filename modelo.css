@@ -54,13 +54,15 @@ footer{
     color: rgb(209, 50, 53);
     font-size: 17pt;
     font-family: 'Tormenta20x';
-    white-space: nowrap;   
 
 }
 @font-face {
     font-family: 'Tormenta20x';
     src: url(Tormenta20x.ttf) format('truetype');
   }
-.display{
-    white-space: nowrap;   
+#options{
+width: 99%;
+justify-content: center;
+align-items: center;
+padding: 1%;
 }
