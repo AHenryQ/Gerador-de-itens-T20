@@ -2,7 +2,7 @@ body{
     background: rgb(209, 50, 53);
     font: normal 15pt Arial;
     background-image: url(forjaV1.png);
-    background-size: 100%;
+    background-size: 100% 200%;
     width: auto;
     height: auto;
 }
