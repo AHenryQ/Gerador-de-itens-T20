@@ -95,9 +95,10 @@ if(arma.substantivo==0){
 }
 disArma.innerHTML=String(arma.nome)
 disDano.innerHTML=String(`${arma.vroll}d${arma.troll}`)
-    if(arma.BonAtk==true){disDano.innerHTML+=String(` +${arma.BonAtk}`)}
+if(arma.BonAtk==true){disDano.innerHTML+=String(` +${arma.BonAtk}`)}
 disCrit.innerHTML=String(`x${arma.xCrit}/${arma.rCrit}`)
-disAlc.innerHTML=String(arma.alcance)
+disAlc.innerHTML=String(`${arma.alcance}`)
+if(arma.alcance!='-'){disAlc.innerHTML+=String('m')}
 disTipo.innerHTML=String(arma.tipoDano)
 disOutro.innerHTML=arma.Other!=undefined?String(arma.Other):""
 disArma3.innerHTML=String(titulosMateriais[Number(arma.nomeMaterial)]+titulos)
@@ -106,7 +107,7 @@ titulos=""
 }
 
 
-function modificadores(arma,num=Number(rand([1,20]))){
+function modificadores(arma,num=Number(rand([1,18]))){
     switch(num){
     case 1://certeira
     if(!!arma.certeira==true){
@@ -154,7 +155,7 @@ function modificadores(arma,num=Number(rand([1,20]))){
             arma.nomeMod.push(5)}
         break
     case 6://harmonizada         arma.Other="Custo de habilidades de ataque -1pm"
-        if(!!arma.harmonizada==true){
+        if(!!arma.harmonizada==true||!!arma.nomeMod==false){
             modificadores(arma)
         }else if(!!arma.Other==false){
             arma.Other="Custo de habilidades de ataque -1pm"
@@ -282,7 +283,7 @@ function modificadores(arma,num=Number(rand([1,20]))){
         break}
     }
 
-function materiais(arma,num=Number(rand([1,10]))){
+function materiais(arma,num=Number(rand([1,10.9]))){
     switch(num){
         case 1://aço-rubi
         if(!!arma.material==true){
