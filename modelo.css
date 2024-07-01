@@ -2,9 +2,11 @@ body{
     background: rgb(209, 50, 53);
     font: normal 15pt Arial;
     background-image: url(forjaV1.png);
-    background-size: 100% 200%;
-    width: auto;
-    height: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
   
 header{
@@ -42,7 +44,7 @@ section{
 
 }
 footer{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 99%;
     height: 50px;
@@ -50,10 +52,19 @@ footer{
     text-align: center;
     font-style: italic;
 }
+
 #disArma2{
     color: rgb(209, 50, 53);
     font-size: 17pt;
     font-family: 'Tormenta20x';
+    display: inline;
+
+}
+#disArma3{
+    color: rgb(209, 50, 53);
+    font-size: 14pt;
+    font-family: 'Tormenta20x';
+    display: inline;
 
 }
 @font-face {
