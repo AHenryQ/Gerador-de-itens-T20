@@ -15,7 +15,7 @@ function fabArms(nome,substantivo,preco,peso,Fogo,vroll,troll,xCrit,rCrit,tipo=0
     peso,
     deFogo:!!Fogo
 }}
-let armas=[adaga=["Adaga",0,2,1,0,1,4,2,19,1,1],espadaCurta=["Espada Curta",0,10,1,0,1,6,2,19,1],foice=["Foice",0,4,1,0,1,6,3,20,2],clava=["Clava",0,0,1,0,1,6,2,20,3,0],lanca=["Lança",0,2,1,0,1,6,2,20,1,1],maca=["Maça",0,12,1,0,1,8,2,20,3,0],bordao=["Bordão",1,0,1,0,1,6,2,20,3,0],pique=["Pique",1,2,0,1,8,2,20,1,0],
+let armas=[adaga=["Adaga",0,2,1,0,1,4,2,19,1,1],espadaCurta=["Espada Curta",0,10,1,0,1,6,2,19,1],foice=["Foice",0,4,1,0,1,6,3,20,2],clava=["Clava",0,0,1,0,1,6,2,20,3,0],lanca=["Lança",0,2,1,0,1,6,2,20,1,1],maca=["Maça",0,12,1,0,1,8,2,20,3,0],bordao=["Bordão",1,0,1,0,1,6,2,20,3,0],pique=["Pique",1,2,1,0,1,8,2,20,1,0],
 tacape=["Tacape",1,0,1,0,1,10,2,20,3,0],azagaia=["Azagaia",0,1,1,0,1,6,2,20,1,2],bestaLeve=["Besta Leve",0,35,1,0,1,8,2,19,1,2],funda=["Funda",0,0,1,0,1,4,2,20,3,2],
 arcoCurto=["Arco Curto",1,30,2,0,1,6,3,20,2,2],machadinha=["Machadinha",0,6,1,0,1,6,3,20,2,1],cimitarra=["Cimitarra",0,15,1,0,1,6,2,18,2,0],espadaLonga=["Espada Longa",0,15,1,0,1,8,2,19,2,0],florete=["Florete",1,20,1,0,1,6,2,18,1,0],machadoBatalha=["Machado de Batalha",1,10,1,0,1,8,3,20,2,0],
 mangual=["Mangual",1,8,1,0,1,8,2,20,3,0],marteloGuerra=["Martelo de Guerra",1,12,1,0,1,8,3,20,3,0],picareta=["Picareta",0,8,1,0,1,6,4,20,1,0],
@@ -29,7 +29,7 @@ tetsubo=["Tetsubo",1,20,2,0,1,10,2,20,3,0],traque=["Traque",1,75,1,1,2,6,3,19,1,
 bacamarte=["Bacamarte",1,450,2,1,4,6,3,19,1,0,1],acoitefinn=["Açoite Fintroll",1,30,1,0,1,8,2,20,2,0],espadaVespa=["Espada Vespa",0,75,1,0,2,4,2,18,1,0],
 pistolaPunhalT=["Pistola-Punhal(Pistola)",0,300,1,1,2,6,3,19,1,1],pistolaPunhalL=["Pistola-Punhal(Punhal)",0,300,1,0,1,6,2,18,1,0],
 mordidaDiabo=["Mordida do Diabo",0,30,1,0,1,4,2,20,1,0],presaSerpente=["Presa da Serpente",0,1000,1,0,1,8,2,17,2,0],lancafogoT=["Lança de Fogo(Tiro)",0,1000,2,1,2,8,3,19,1,2],
-lancafogoL=["Lança de Fogo(Lamina)",0,1000,2,0,1,10,3,20,1,0],shuriken=["Shuriken",0,1,0.5,0,1,4,2,20,1,1],arpao=["Arpão",130,1,0,1,10,3,20,1,1],canhaoMao=["Canhão de Mão",1,450,3,1,3,6,3,19,1,2,1],derringer=["Derringer",0,200,1,1,2,4,3,18,1,1,0],espingarda=["Espingarda",0,100,2,1,2,6,3,19,1,2,0],garrucha=["Garrucha",0,50,1,1,2,4,3,19,1,1,0],pimenteiro=["Pimenteiro",1,600,1,1,2,4,3,20,1,1,0],rifle=["Rifle",1,700,2,1,2,8,3,18,1,3,1]]
+lancafogoL=["Lança de Fogo(Lamina)",0,1000,2,0,1,10,3,20,1,0],shuriken=["Shuriken",0,1,0.5,0,1,4,2,20,1,1],arpao=["Arpão",1,30,1,0,1,10,3,20,1,1],canhaoMao=["Canhão de Mão",1,450,3,1,3,6,3,19,1,2,1],derringer=["Derringer",0,200,1,1,2,4,3,18,1,1,0],espingarda=["Espingarda",0,100,2,1,2,6,3,19,1,2,0],garrucha=["Garrucha",0,50,1,1,2,4,3,19,1,1,0],pimenteiro=["Pimenteiro",1,600,1,1,2,4,3,20,1,1,0],rifle=["Rifle",1,700,2,1,2,8,3,18,1,3,1]]
 
 let titulosMateriais=['','de Aço-Rubi','de Adamante', 'de Gelo Eterno','de Madeira Tollon','de Matéria Vermelha','de Mitral','de Casco de Monstro','de Cristal de Sol','de Lanajuste','de Prata','de Couraça de Kaiju','de Pena de Kraken','de Quitina-Razza'];
 
