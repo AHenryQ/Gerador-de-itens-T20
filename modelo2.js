@@ -26,7 +26,9 @@ tetsubo=["Tetsubo",1,1,10,2,20,3,0],traque=["Traque",1,2,6,3,19,1,1],arcabuz=["A
 bacamarte=["Bacamarte",1,4,6,3,19,1,0,1],acoitefinn=["Açoite Fintroll",1,1,8,2,20,2,0],espadaVespa=["Espada Vespa",0,2,4,2,18,1,0],
 pistolaPunhalT=["Pistola-Punhal",0,2,6,3,19,1,1],pistolaPunhalL=["Pistola-Punhal",0,1,6,2,18,1,0],
 mordidaDiabo=["Mordida do Diabo",0,1,4,2,20,1,0],presaSerpente=["Presa da Serpente",0,1,8,2,17,2,0],lancafogoT=["Lança de Fogo",1,2,8,3,19,1,2],
-lancafogoL=["Lança de Fogo",1,1,10,3,20,1,0],shuriken=["Shuriken",0,1,4,2,20,1,1],arpao=["Arpão",1,1,10,3,20,1,1]]
+lancafogoL=["Lança de Fogo",1,1,10,3,20,1,0],shuriken=["Shuriken",0,1,4,2,20,1,1],arpao=["Arpão",1,1,10,3,20,1,1],bacamarte=["Bacamarte",1,2,10,2,19,1,1,1],
+canhaoMao=["Canhão de Mão",1,3,6,3,19,1,2,1],derringer=["Derringer",0,2,4,3,18,1,1,0],espingarda=["Espingarda",0,2,6,3,19,1,2,0],garrucha=["Garrucha",0,2,4,3,19,1,1,0],
+pimenteiro=["Pimenteiro",1,2,4,3,20,1,1,0],rifle=["Rifle",1,2,8,3,18,1,3,1]]
 
 let titulosMateriais=['','de Aço-Rubi','de Adamante', 'de Gelo Eterno','de Madeira Tollon','de Matéria Vermelha','de Mitral','de Casco de Monstro','de Cristal de Sol','de Lanajuste','de Prata','de Couraça de Kaiju','de Pena de Kraken','de Quitina-Razza'];
 
