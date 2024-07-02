@@ -110,7 +110,7 @@ titulos=""
 }
 
 
-function modificadores(arma,num=Number(rand([1,18]))){
+function modificadores(arma,num=Number(rand([1,19]))){
     switch(num){
     case 1://certeira
     if(!!arma.certeira==true){
@@ -275,7 +275,7 @@ function modificadores(arma,num=Number(rand([1,18]))){
 
      }   break
     case 16://Carga rápida
-    if(!!arma.cRapida==true){
+    if(!!arma.cRapida==true||arma.defogo==false){
         modificadores(arma)
     }else if(!!arma.Other==false){
             arma.Other="Diminui a recarga em 1 passo"
