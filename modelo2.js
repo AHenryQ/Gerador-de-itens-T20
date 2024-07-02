@@ -275,7 +275,7 @@ function modificadores(arma,num=Number(rand([1,19]))){
 
      }   break
     case 16://Carga rápida
-    if(!!arma.cRapida==true||arma.defogo==false){
+    if(!!arma.cRapida==true||!!arma.deFogo==false){
         modificadores(arma)
     }else if(!!arma.Other==false){
             arma.Other="Diminui a recarga em 1 passo"
