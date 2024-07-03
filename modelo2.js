@@ -203,7 +203,7 @@ function modificadores(arma,num=Number(rand([1,19]))){
         arma.nomeMod.push(8)}
         break
     case 9://mira telescópica
-    if(arma.alcance=="-"||!!arma.melAlc==true){
+    if(arma.alcance=="-"||arma.alcance<10||!!arma.melAlc==true){
         modificadores(arma)
     }else if(arma.alcance==9){
         arma.alcance=30
