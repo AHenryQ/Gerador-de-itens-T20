@@ -15,21 +15,33 @@ function fabArms(nome,substantivo,preco,peso,Fogo,vroll,troll,xCrit,rCrit,tipo=0
     peso,
     deFogo:!!Fogo
 }}
-let armas=[adaga=["Adaga",0,2,1,0,1,4,2,19,1,1],espadaCurta=["Espada Curta",0,10,1,0,1,6,2,19,1],foice=["Foice",0,4,1,0,1,6,3,20,2],clava=["Clava",0,0,1,0,1,6,2,20,3,0],lanca=["Lança",0,2,1,0,1,6,2,20,1,1],maca=["Maça",0,12,1,0,1,8,2,20,3,0],bordao=["Bordão",1,0,1,0,1,6,2,20,3,0],pique=["Pique",1,2,1,0,1,8,2,20,1,0],
-tacape=["Tacape",1,0,1,0,1,10,2,20,3,0],azagaia=["Azagaia",0,1,1,0,1,6,2,20,1,2],bestaLeve=["Besta Leve",0,35,1,0,1,8,2,19,1,2],funda=["Funda",0,0,1,0,1,4,2,20,3,2],
-arcoCurto=["Arco Curto",1,30,2,0,1,6,3,20,2,2],machadinha=["Machadinha",0,6,1,0,1,6,3,20,2,1],cimitarra=["Cimitarra",0,15,1,0,1,6,2,18,2,0],espadaLonga=["Espada Longa",0,15,1,0,1,8,2,19,2,0],florete=["Florete",1,20,1,0,1,6,2,18,1,0],machadoBatalha=["Machado de Batalha",1,10,1,0,1,8,3,20,2,0],
-mangual=["Mangual",1,8,1,0,1,8,2,20,3,0],marteloGuerra=["Martelo de Guerra",1,12,1,0,1,8,3,20,3,0],picareta=["Picareta",0,8,1,0,1,6,4,20,1,0],
-tridente=["Tridente",1,15,1,0,1,8,2,20,1,1],alabarda=["Alabarda",0,10,2,0,1,10,3,20,2,0],alfange=["Alfange",0,75,2,0,2,4,2,18,2,0],
-gadanho=["Gadanho",1,18,2,0,2,4,4,20,2,0],lancaMontada=["Lança Montada",0,10,2,0,1,8,3,20,1,0],machadoGuerra=["Machado de Guerra",1,20,2,0,1,12,3,20,2,0],
-marreta=["Marreta",0,20,2,0,3,4,2,20,3,0],montante=["Montante",0,50,2,0,2,6,2,19,2,0],arcoLongo=["Arco Longo",1,100,2,0,1,8,3,20,1,2],
-bestaPesada=["Besta Pesada",0,50,2,0,1,12,2,19,1,2],chicote=["Chicote",1,2,1,0,1,3,2,20,2,0],espadaBastarda=["Espada Bastarda",0,35,1,0,1,10,2,19,2,0],
-katana=["Katana",0,100,1,0,1,8,2,19,2,0],machadoAnao=["Machado Anão",1,30,1,0,1,10,3,20,2,0],correnteEspinhos=["Corrente de Espinhos",0,25,2,0,2,4,2,19,2,0],machadoTaurico=["Machado Táurico",1,50,2,0,2,8,3,20,2,0,1],pistola=["Pistola",0,250,1,1,2,6,3,19,1,1],mosquete=["Mosquete",1,500,2,1,2,8,3,19,1,2,1],
-porrete=["Porrete",1,2,1,0,1,6,2,20,3,0],zarabatana=["Zarabatana",0,5,1,0,1,3,2,20,1,1],nekote=["Neko-te",1,10,1,0,1,4,2,19,2,0],gladio=["Gládio",1,12,1,0,1,6,3,19,1,0],
-tetsubo=["Tetsubo",1,20,2,0,1,10,2,20,3,0],traque=["Traque",1,75,1,1,2,6,3,19,1,1],arcabuz=["Arcabuz",0,800,2,1,2,10,3,19,1,2,1],
-bacamarte=["Bacamarte",1,450,2,1,4,6,3,19,1,0,1],acoitefinn=["Açoite Fintroll",1,30,1,0,1,8,2,20,2,0],espadaVespa=["Espada Vespa",0,75,1,0,2,4,2,18,1,0],
+let armas=[adaga=["Adaga",0,2,1,0,1,4,2,19,1,1],espadaCurta=["Espada Curta",0,10,1,0,1,6,2,19,1],
+foice=["Foice",0,4,1,0,1,6,3,20,2],clava=["Clava",0,0,1,0,1,6,2,20,3,0],lanca=["Lança",0,2,1,0,1,6,2,20,1,1],
+maca=["Maça",0,12,1,0,1,8,2,20,3,0],bordao=["Bordão",1,0,1,0,1,6,2,20,3,0],pique=["Pique",1,2,1,0,1,8,2,20,1,0],
+tacape=["Tacape",1,0,1,0,1,10,2,20,3,0],azagaia=["Azagaia",0,1,1,0,1,6,2,20,1,2],bestaLeve=["Besta Leve",0,35,1,0,1,8,2,19,1,2],
+funda=["Funda",0,0,1,0,1,4,2,20,3,2],arcoCurto=["Arco Curto",1,30,2,0,1,6,3,20,2,2],machadinha=["Machadinha",0,6,1,0,1,6,3,20,2,1],
+cimitarra=["Cimitarra",0,15,1,0,1,6,2,18,2,0],espadaLonga=["Espada Longa",0,15,1,0,1,8,2,19,2,0],florete=["Florete",1,20,1,0,1,6,2,18,1,0],
+machadoBatalha=["Machado de Batalha",1,10,1,0,1,8,3,20,2,0],mangual=["Mangual",1,8,1,0,1,8,2,20,3,0],
+marteloGuerra=["Martelo de Guerra",1,12,1,0,1,8,3,20,3,0],picareta=["Picareta",0,8,1,0,1,6,4,20,1,0],
+tridente=["Tridente",1,15,1,0,1,8,2,20,1,1],alabarda=["Alabarda",0,10,2,0,1,10,3,20,2,0],
+alfange=["Alfange",0,75,2,0,2,4,2,18,2,0],gadanho=["Gadanho",1,18,2,0,2,4,4,20,2,0],
+lancaMontada=["Lança Montada",0,10,2,0,1,8,3,20,1,0],machadoGuerra=["Machado de Guerra",1,20,2,0,1,12,3,20,2,0],
+marreta=["Marreta",0,20,2,0,3,4,2,20,3,0],montante=["Montante",0,50,2,0,2,6,2,19,2,0],
+arcoLongo=["Arco Longo",1,100,2,0,1,8,3,20,1,2],bestaPesada=["Besta Pesada",0,50,2,0,1,12,2,19,1,2],
+chicote=["Chicote",1,2,1,0,1,3,2,20,2,0],espadaBastarda=["Espada Bastarda",0,35,1,0,1,10,2,19,2,0],
+katana=["Katana",0,100,1,0,1,8,2,19,2,0],machadoAnao=["Machado Anão",1,30,1,0,1,10,3,20,2,0],
+correnteEspinhos=["Corrente de Espinhos",0,25,2,0,2,4,2,19,2,0],machadoTaurico=["Machado Táurico",1,50,2,0,2,8,3,20,2,0,1],
+pistola=["Pistola",0,250,1,1,2,6,3,19,1,1],mosquete=["Mosquete",1,500,2,1,2,8,3,19,1,2,1],
+porrete=["Porrete",1,2,1,0,1,6,2,20,3,0],zarabatana=["Zarabatana",0,5,1,0,1,3,2,20,1,1],
+nekote=["Neko-te",1,10,1,0,1,4,2,19,2,0],gladio=["Gládio",1,12,1,0,1,6,3,19,1,0],tetsubo=["Tetsubo",1,20,2,0,1,10,2,20,3,0],
+traque=["Traque",1,75,1,1,2,6,3,19,1,1],arcabuz=["Arcabuz",0,800,2,1,2,10,3,19,1,2,1],bacamarte=["Bacamarte",1,450,2,1,4,6,3,19,1,0,1],
+acoitefinn=["Açoite Fintroll",1,30,1,0,1,8,2,20,2,0],espadaVespa=["Espada Vespa",0,75,1,0,2,4,2,18,1,0],
 pistolaPunhalT=["Pistola-Punhal(Pistola)",0,300,1,1,2,6,3,19,1,1],pistolaPunhalL=["Pistola-Punhal(Punhal)",0,300,1,0,1,6,2,18,1,0],
-mordidaDiabo=["Mordida do Diabo",0,30,1,0,1,4,2,20,1,0],presaSerpente=["Presa da Serpente",0,1000,1,0,1,8,2,17,2,0],lancafogoT=["Lança de Fogo(Tiro)",0,1000,2,1,2,8,3,19,1,2],
-lancafogoL=["Lança de Fogo(Lamina)",0,1000,2,0,1,10,3,20,1,0],shuriken=["Shuriken",0,1,0.5,0,1,4,2,20,1,1],arpao=["Arpão",1,30,1,0,1,10,3,20,1,1],canhaoMao=["Canhão de Mão",1,450,3,1,3,6,3,19,1,2,1],derringer=["Derringer",0,200,1,1,2,4,3,18,1,1,0],espingarda=["Espingarda",0,100,2,1,2,6,3,19,1,2,0],garrucha=["Garrucha",0,50,1,1,2,4,3,19,1,1,0],pimenteiro=["Pimenteiro",1,600,1,1,2,4,3,20,1,1,0],rifle=["Rifle",1,700,2,1,2,8,3,18,1,3,1]]
+mordidaDiabo=["Mordida do Diabo",0,30,1,0,1,4,2,20,1,0],presaSerpente=["Presa da Serpente",0,1000,1,0,1,8,2,17,2,0],
+lancafogoT=["Lança de Fogo(Tiro)",0,1000,2,1,2,8,3,19,1,2],lancafogoL=["Lança de Fogo(Lamina)",0,1000,2,0,1,10,3,20,1,0],
+shuriken=["Shuriken",0,1,0.5,0,1,4,2,20,1,1],arpao=["Arpão",1,30,1,0,1,10,3,20,1,1],canhaoMao=["Canhão de Mão",1,450,3,1,3,6,3,19,1,2,1],
+derringer=["Derringer",0,200,1,1,2,4,3,18,1,1,0],espingarda=["Espingarda",0,100,2,1,2,6,3,19,1,2,0],
+garrucha=["Garrucha",0,50,1,1,2,4,3,19,1,1,0],pimenteiro=["Pimenteiro",1,600,1,1,2,4,3,20,1,1,0],rifle=["Rifle",1,700,2,1,2,8,3,18,1,3,1]]
 
 let titulosMateriais=['','de Aço-Rubi','de Adamante', 'de Gelo Eterno','de Madeira Tollon','de Matéria Vermelha','de Mitral','de Casco de Monstro','de Cristal de Sol','de Lanajuste','de Prata','de Couraça de Kaiju','de Pena de Kraken','de Quitina-Razza'];
 
@@ -98,7 +110,8 @@ if(arma.substantivo==0){
 }
 disArma.innerHTML=String(arma.nome)
 disDano.innerHTML=String(`${arma.vroll}d${arma.troll}`)
-if(arma.BonAtk==true){disDano.innerHTML+=String(` +${arma.BonAtk}`)}
+if(!!arma.danomaterial==true){disDano.innerHTML+=String(` +${arma.danomaterial}`)}
+if(!!arma.BonAtk==true){disDano.innerHTML+=String(` +${arma.BonAtk}`)}
 disCrit.innerHTML=String(`x${arma.xCrit}/${arma.rCrit}`)
 disAlc.innerHTML=String(`${arma.alcance}`)
 if(arma.alcance!='-'){disAlc.innerHTML+=String('m')}
@@ -275,7 +288,7 @@ function modificadores(arma,num=Number(rand([1,19]))){
 
      }   break
     case 16://Carga rápida
-    if(!!arma.cRapida==true||!!arma.deFogo==false){
+    if(!!arma.cRapida==true||arma.deFogo==false){
         modificadores(arma)
     }else if(!!arma.Other==false){
             arma.Other="Diminui a recarga em 1 passo"
@@ -318,7 +331,7 @@ function materiais(arma,num=Number(rand([1,10.9]))){
             arma.nomeMaterial=2}
         break
         case 3://gelo eterno
-        if(!!arma.material==true){
+        if(!!arma.material==true||!!arma.deFogo==true){
             modificadores(arma)}else{
             if(!!arma.BonAtk==true){arma.BonAtk+=2}else{arma.BonAtk=2}
             if(!!arma.Other==false){
@@ -343,7 +356,7 @@ function materiais(arma,num=Number(rand([1,10.9]))){
         case 5://matéria vermelha
         if(!!arma.material==true){
             modificadores(arma)}else{
-                arma.danomaterial="1d6"
+                arma.danomaterial="+ 1d6"
                 if (!!arma.Other==false){
                     arma.Other="Causa +1d6 extra, mas causa 1 ponto de dano ao usar"
                     arma.nomeMaterial=5
@@ -361,7 +374,7 @@ function materiais(arma,num=Number(rand([1,10.9]))){
             }
             break
         case 7://casco de monstro
-        if(!!arma.material==true){
+        if(!!arma.material==true|| arma.alcance>10||!!arma.deFogo==true){
             modificadores(arma)}else{
                 arma.material=true
                 if(!!arma.Other==false){
@@ -377,7 +390,7 @@ function materiais(arma,num=Number(rand([1,10.9]))){
         if(!!arma.material==true){
             modificadores(arma)}else{
                 arma.nomeMaterial=8
-                if(arma.tipoDano!="corte"||arma.tipoDano!="perfuração"){
+                if(arma.tipoDano!="corte"||arma.tipoDano!="perfuração"||arma.alcance>10||!!arma.deFogo==true){
                     modificadores(arma)}else{
                         if(!!arma.BonAtk==true){arma.BonAtk+=2}else{arma.BonAtk=2}
                         if(!!arma.Other==false){
@@ -387,7 +400,7 @@ function materiais(arma,num=Number(rand([1,10.9]))){
                       console.log(arma.tipoDano=="corte"||arma.tipoDano=="perfuração")
             break
         case 9://lanajuste
-        if(!!arma.material==true){
+        if(!!arma.material==true||arma.deFogo==true){
             modificadores(arma)}else{
                 arma.nomeMaterial=9
                 arma.material=true
